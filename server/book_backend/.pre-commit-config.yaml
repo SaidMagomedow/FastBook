@@ -41,9 +41,3 @@ repos:
         entry: yesqa
         language: system
         types: [python]
-
-    -   id: tests
-        name: Run tests
-        entry: "bash README.md"
-        language: system
-        verbose: true

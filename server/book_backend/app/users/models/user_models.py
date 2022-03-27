@@ -1,9 +1,12 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column
+from sqlalchemy import Integer
+from sqlalchemy import String
+
 from ..database import Base
 
 
 class User(Base):
-    __tablename__ = 'users'
+    __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String, unique=True, nullable=False)
@@ -14,7 +17,7 @@ class User(Base):
 
 
 class Authors(User):
-    __tablename__ = 'author'
+    __tablename__ = "author"
 
     first_name = Column(String(15))
     middle_name = Column(String(15))

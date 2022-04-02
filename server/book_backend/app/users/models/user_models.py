@@ -1,8 +1,7 @@
+from book_backend.app.database import Base
 from sqlalchemy import Column
 from sqlalchemy import Integer
 from sqlalchemy import String
-
-from ..database import Base
 
 
 class User(Base):

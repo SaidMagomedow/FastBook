@@ -1,11 +1,10 @@
-from app.users.models.user_models import Authors
+from app.database import Base
+from book_backend.app.users.models.user_models import Authors
 from sqlalchemy import Column
 from sqlalchemy import ForeignKey
 from sqlalchemy import Integer
 from sqlalchemy import String
 from sqlalchemy.orm import relationship
-
-from ..database import Base
 
 
 class Books(Base):

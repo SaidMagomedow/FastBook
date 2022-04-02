@@ -2,9 +2,9 @@ version: "3.7"
 
 services:
   app:
-    build: ./server/book_backend
+    build: ./server
     env_file:
-      - ./server/book_backend/.env
+      - ./server/book_backend/venv/venv/.env
     ports:
       - "8000:8000"
 
@@ -12,7 +12,6 @@ services:
   database:
     image: postgres:12
     env_file:
-      - ./server/book_backend/.env
+      - ./server/book_backend/venv/venv/.env
     ports:
       - "5432:5432"
-

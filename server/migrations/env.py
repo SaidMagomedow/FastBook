@@ -2,11 +2,7 @@ from logging.config import fileConfig
 from os import environ
 
 from alembic import context
-from book_backend.app.content.models.book_models import Books
-from book_backend.app.content.models.book_models import BooksCategory
-from book_backend.app.content.models.book_models import Category
-from book_backend.app.users.models.user_models import Authors
-from book_backend.app.users.models.user_models import User
+from book_backend.app.database import Base
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
@@ -22,13 +18,7 @@ config.set_section_option(section, "DB_HOST", environ.get("POSTGRES_SERVER"))
 
 fileConfig(config.config_file_name)
 
-target_metadata = [
-    Books.metadata,
-    Category.metadata,
-    BooksCategory.metadata,
-    User.metadata,
-    Authors.metadata,
-]
+
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
 if config.config_file_name is not None:
@@ -38,8 +28,7 @@ if config.config_file_name is not None:
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadata = None
-
+target_metadata = [Base.metadata]
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
 # my_important_option = config.get_main_option("my_important_option")

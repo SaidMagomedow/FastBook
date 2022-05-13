@@ -1,5 +1,5 @@
-from app.database import Base
-from book_backend.app.users.models.user_models import Authors
+from book_backend.app.database import Base
+from book_backend.app.users.models.user_models import User
 from sqlalchemy import Column
 from sqlalchemy import ForeignKey
 from sqlalchemy import Integer
@@ -12,7 +12,7 @@ class Books(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(30))
-    authors = Column(ForeignKey(Authors.id))
+    Author = Column(ForeignKey(User.id))
     description = Column(String(500))
     categories = relationship("Category", secondary="BooksCategory", backref="Books")
 
@@ -36,5 +36,5 @@ class BooksCategory(Base):
     __tablename__ = "BooksCategory"
 
     id = Column(Integer, primary_key=True, index=True)
-    books_id = Column(Integer, ForeignKey("Books.id"))
-    category_id = Column(Integer, ForeignKey("Category.id"))
+    books_id = Column(Integer, ForeignKey(Books.id))
+    category_id = Column(Integer, ForeignKey(Category.id))

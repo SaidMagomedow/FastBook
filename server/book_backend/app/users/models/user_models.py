@@ -30,3 +30,6 @@ class Author(User):
         "polymorphic_identity": "author",
         "inherit_condition": (id == User.id),
     }
+
+    def __str__(self) -> str:
+        return f"{self.first_name} {self.middle_name} {self.last_name}"

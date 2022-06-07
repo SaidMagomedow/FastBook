@@ -58,7 +58,7 @@ A step by step series of examples that tell you how to get a development env run
 ### And coding style tests
 
 ```
-When trying to send a commit, pre-commit hooks will work, for this you need to install a pre-commit hook to yourself. Watch in https://pre-commit.com/
+When trying to send a commit, pre-commit hooks will work, for this you need to install a pre-commit hook to yourself. Watch in [@pre-commit hooks](https://pre-commit.com/)
 ```
 
 ## 🎈 Usage <a name="usage"></a>
